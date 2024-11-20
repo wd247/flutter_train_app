@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//주석
 class MyHomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
