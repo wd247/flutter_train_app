@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_train_app/Homepage.dart';
+import 'package:flutter_train_app/HomePage.dart';
+import 'package:flutter_train_app/SeatPage.dart';
+import 'package:flutter_train_app/StationListPage.dart';
 
 void main() {
   runApp(const MyApp());

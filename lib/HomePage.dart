@@ -26,8 +26,11 @@ class HomePageState extends State<HomePage> {
           children: [
             Container(
                 height: 200,
-                color: Colors.white,
                 width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 수평 정렬
                     children: [
@@ -35,15 +38,29 @@ class HomePageState extends State<HomePage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center, // 수직 정렬
                         children: [
-                          Text('출발역', style: TextStyle(fontSize: 16)),
+                          Text('출발역',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold)),
                           Text('선택', style: TextStyle(fontSize: 50)),
                         ],
                       ),
+                      Container(
+                        width: 2,
+                        height: 50,
+                        color: Colors.grey[400],
+                      ),
+
                       // 두 번째 Column
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center, // 수직 정렬
                         children: [
-                          Text('도착역', style: TextStyle(fontSize: 16)),
+                          Text('도착역',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold)),
                           Text('선택', style: TextStyle(fontSize: 50)),
                         ],
                       ),
@@ -56,7 +73,12 @@ class HomePageState extends State<HomePage> {
               height: 56,
               child: ElevatedButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
                 child: Text(
                   '좌석 선택',
                   style: TextStyle(
