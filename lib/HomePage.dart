@@ -20,6 +20,7 @@ class HomePageState extends State<HomePage> {
         ),
       ),
       body: Container(
+        padding: EdgeInsets.all(20),
         color: Colors.grey[200],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
