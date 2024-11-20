@@ -10,45 +10,80 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyHomePageState();
+    return HomePageState();
   }
 }
 
-//test
-class MyHomePageState extends State<MyHomePage> {
+class HomePageState extends State<HomePage> {
   int counter = 0;
 
   @override
   Widget build(BuildContext context) {
-    print('build 호출됨');
     return Scaffold(
       appBar: AppBar(
-        title: Text('test app'),
-      ),
-      body: Center(
-        child: Text(
-          '$counter',
-          style: TextStyle(
-            fontSize: 100,
-          ),
+        title: Text(
+          '기차 예매',
+          style: TextStyle(fontSize: 30),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-          print('카운터 증가됨 : $counter');
-        },
-        child: Icon(Icons.add),
+      body: Container(
+        color: Colors.grey[200],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+                height: 200,
+                color: Colors.white,
+                width: double.infinity,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 수평 정렬
+                    children: [
+                      // 첫 번째 Column
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center, // 수직 정렬
+                        children: [
+                          Text('출발역', style: TextStyle(fontSize: 16)),
+                          Text('선택', style: TextStyle(fontSize: 50)),
+                        ],
+                      ),
+                      // 두 번째 Column
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center, // 수직 정렬
+                        children: [
+                          Text('도착역', style: TextStyle(fontSize: 16)),
+                          Text('선택', style: TextStyle(fontSize: 50)),
+                        ],
+                      ),
+                    ])),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+              width: 400,
+              height: 56,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+                child: Text(
+                  '좌석 선택',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
